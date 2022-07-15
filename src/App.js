@@ -12,7 +12,6 @@ function App() {
     getUsers()
         .then(users => {
             setUsers(users);
-            setIsLoaded(true)
         })
   }, []);
 
@@ -24,7 +23,7 @@ function App() {
         Users List
       </header>
         {/*TODO - Show a "loading" while the users are being loaded*/}
-        {/*TODO - Show a message if there's an error*/}
+        {/*TODO - Show a "Sorry, there was an error." if there's an error*/}
         <div className="users">
             {/*TODO - DISPLAY USERS HERE*/}
         </div>
