@@ -1,6 +1,7 @@
 import './App.css';
 import {useEffect, useState} from 'react';
 import {getUsers} from './users-service';
+import {Header} from './Header';
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -19,6 +20,7 @@ function App() {
   //  list in the following format: last_name, first_name (email)
   return (
     <div className="App">
+        <Header title="Users List App"/>
       <header className="App-header">
         Users List
       </header>
