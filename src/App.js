@@ -21,9 +21,6 @@ function App() {
   return (
     <div className="App">
         <Header title="Users List App"/>
-      <header className="App-header">
-        Users List
-      </header>
         {/*TODO - Show a "loading" while the users are being loaded*/}
         {/*TODO - Show a "Sorry, there was an error." if there's an error*/}
         <div className="users">
