@@ -1,4 +1,4 @@
-export const Header = ({title}) => {
+export const Header = (title) => {
     return <header className="app-header">
         {title}
     </header>
