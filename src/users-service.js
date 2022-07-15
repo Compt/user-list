@@ -16,10 +16,12 @@ const users = [
  *
  * @return {Promise<any>}
  */
-export const getUsers = (delay=0) => {
+export const getUsers = (delay=0, forceError=false) => {
     const myHeaders = new Headers();
 
     myHeaders.append("Content-Type", "application/json");
+
+    const url = forceError ? 'invalid_url' : `https://httpbin.org/delay/${delay}`;
 
     const requestOptions = {
         method: 'POST',
@@ -30,5 +32,5 @@ export const getUsers = (delay=0) => {
 
     // TODO - update this code so that it returns just the users (which are in the "data" property
     //  of the response body.)
-    return fetch(`https://httpbin.org/delay/${delay}`, requestOptions);
+    return fetch(url, requestOptions);
 };
