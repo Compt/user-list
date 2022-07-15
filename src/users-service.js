@@ -7,17 +7,16 @@ const users = [
 ];
 
 /**
- * // TODO - this should return a promise of a JavaScript object, not a string.
  *
  * Returns a list of users.
  *
- * http://httpbin.org/anything returns anything you POST to it. It returns a JSON which has many
- * interesting information. However, for this exersize, we just care about the "json" property in
- * the body, which contains what we sent in the post.
+ * https://httpbin.org/delay/1 returns anything you POST to it. It returns a JSON which has many
+ * interesting information. However, for this exercise, we just care about the "data" property in
+ * the body, which contains what we sent in the as a _string_.
  *
  * @return {Promise<any>}
  */
-export const getUsers = () => {
+export const getUsers = (delay=0) => {
     const myHeaders = new Headers();
 
     myHeaders.append("Content-Type", "application/json");
@@ -29,7 +28,7 @@ export const getUsers = () => {
         redirect: 'follow'
     };
 
-    // TODO - update this code so that it returns just the users (which are in the "json" property
-    //  of the response body)
-    return fetch("http://httpbin.org/anything", requestOptions);
+    // TODO - update this code so that it returns just the users (which are in the "data" property
+    //  of the response body.)
+    return fetch(`https://httpbin.org/delay/${delay}`, requestOptions);
 };
